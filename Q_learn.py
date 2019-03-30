@@ -36,11 +36,12 @@ class Q_Model:
         print(self.q)
 
         # update q matrix to qn
-        _update_q()
+        # _update_q()
+        self.Q_max("F")
 
         # print qn(s, exercise) & qn(s, relax)
-        print("qn(" + self.s + ", exercise): " + q(self.s + "," + "E"))
-        print("qn(" + self.s + ", relax): " + q(self.s + "," + "R"))
+        print("qn(" + self.s + ", exercise): " + str(self.q[self.s + "," + "E"]))
+        print("qn(" + self.s + ", relax): " + str(self.q[self.s + "," + "R"]))
 
 
     # updates the q dictionary to qn
@@ -62,4 +63,15 @@ class Q_Model:
                         sum += P_DICT[P_key] * Q_max(state)
                     new_q[Q_key] = self.q[Q_key] + self.gamma * sum # update new_q's values
             self.q = new_q # set q to the update q dictionary
-            self.n-- # decrement n
+            self.n -= 1 # decrement n by 1
+
+    # finds the max value of q(state, action), for all actions, and returns that value
+    def Q_max(self, state):
+
+        max = float('-inf') # set max to negative infinity
+
+        print(max > -2) # False
+        print(max < -2) # True
+
+
+        # for i in range(NUM_ACTIONS)

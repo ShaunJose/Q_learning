@@ -43,7 +43,7 @@ P_DICT = {
   "F,E,U" : 0.01 * PROB_EX_ALIVE,
   "F,E,D" : PROB_EX_DEAD,
   "F,R,F" : 0.7 * PROB_RE_ALIVE,
-  "F,R,U" : 0.3 * PROB_EX_ALIVE,
+  "F,R,U" : 0.3 * PROB_RE_ALIVE,
   "F,R,D" : PROB_RE_DEAD,
   "U,E,F" : 0.2 * PROB_EX_ALIVE,
   "U,E,U" : 0.8 * PROB_EX_ALIVE,

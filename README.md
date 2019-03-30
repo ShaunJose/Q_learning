@@ -10,3 +10,6 @@ Use python3
 ```
 python3 main.py
 ```
+
+### Note
+Files "Problem Specification.pdf" and "Test values.pdf" are due to courtesy of Tim Fernando

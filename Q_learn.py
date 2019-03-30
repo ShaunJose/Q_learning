@@ -19,14 +19,14 @@ class Q_Model:
 
     # Constructor
     def __init__(self, n, gamma, s, q):
-        self.n = n # q-matrix number
-        self.gamma = gamma # gamma value ("learning rate")
+        self.n = int(n) # q-matrix number
+        self.gamma = int(gamma) # gamma value ("learning rate")
         self.s = s # State
-        self.q = q # get q matrix
+        self.q = q # get q matrix (in the form of a dictionary)
 
 
-    # Finds q_n
-    def find_qn(self):
+    # Finds qn using function _update_q, and then prints relevant values of qn
+    def compute_qn(self):
         """
         Finds qn for the particular Q_Model
 
@@ -34,3 +34,19 @@ class Q_Model:
         """
 
         print(self.q)
+
+        # update q matrix to qn
+        _update_q()
+
+        # print qn(s, exercise) & qn(s, relax)
+        print("qn(" + s + ", exercise): " + q(s + "," + "E"))
+        print("qn(" + s + ", relax): " + q(s + "," + "R"))
+
+
+    # updates the q dictionary to qn
+    def _update_q():
+
+        # through iterations
+        # while self.n > 0:
+
+        #TODO: make that function call a max function for the equation

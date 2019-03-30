@@ -1,3 +1,8 @@
+# author: Shaun Jose
+
+# Description:
+# All constants used for this project are saved here
+
 # Initialise probabilities of person being dead
 PROB_EX_DEAD = 1/10 # probability person dies due to exercise
 PROB_EX_ALIVE = 1 - PROB_EX_DEAD

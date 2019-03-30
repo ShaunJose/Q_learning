@@ -67,9 +67,9 @@ def _acceptValues(q0):
         # accept values
         n = input("Input n: ")
         gamma = input("Input \u03B3: ")
-        s = input("Input s: ")
+        s = input("Input s \nF -> fit\nU -> unfit\nD -> dead\n ")
         model = Q_Model(n, gamma, s, q0)
-        model.find_qn()
+        model.compute_qn()
 
 
 

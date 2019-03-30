@@ -39,14 +39,27 @@ class Q_Model:
         _update_q()
 
         # print qn(s, exercise) & qn(s, relax)
-        print("qn(" + s + ", exercise): " + q(s + "," + "E"))
-        print("qn(" + s + ", relax): " + q(s + "," + "R"))
+        print("qn(" + self.s + ", exercise): " + q(self.s + "," + "E"))
+        print("qn(" + self.s + ", relax): " + q(self.s + "," + "R"))
 
 
     # updates the q dictionary to qn
-    # def _update_q():
+    def _update_q(self):
+
+        new_q = {} # copy of new dictionary where new values will be stored
 
         # update q0 to qn, it not already qn
-        # while(self.n > 0):
-
-        #TODO: make that function call a max function for the equation
+        while self.n > 0: # n times
+            for i in range(NUM_STATES): # through states
+                curr_state = STATES[i] # get state
+                for j in range(NUM_ACTIONS): # through actions
+                    curr_action = ACTIONS[j] # get action
+                    Q_key = curr_state + "," + curr_action # make dict key
+                    sum = 0 # initialise sum
+                    for k in range(NUM_STATES): # loop for updating new_q
+                        state = STATES[k]
+                        P_key = Q_key + "," + state
+                        sum += P_DICT[P_key] * Q_max(state)
+                    new_q[Q_key] = self.q[Q_key] + self.gamma * sum # update new_q's values
+            self.q = new_q # set q to the update q dictionary
+            self.n-- # decrement n

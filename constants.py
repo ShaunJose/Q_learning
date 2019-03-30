@@ -9,14 +9,13 @@ PROB_EX_ALIVE = 1 - PROB_EX_DEAD
 PROB_RE_DEAD = 1/100 # probability person dies due to relaxing
 PROB_RE_ALIVE = 1 - PROB_RE_DEAD
 
-# Initialise number of actions and states
-NUM_STATES = 3
-NUM_ACTIONS = 2
-
+# Initialise states and actions, and the number of states and actions
 # States: F -> fit, U -> Unfit, D -> Deads
 # Actions: E -> Exercies, R -> Relax
 STATES = ["F", "U", "D"]
 ACTIONS = ["E", "R"]
+NUM_STATES = len(STATES)
+NUM_ACTIONS = len(ACTIONS)
 
 # Initialise dictionaries for R-matrix and probability values
 R_DICT = {

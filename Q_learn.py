@@ -20,7 +20,7 @@ class Q_Model:
     # Constructor
     def __init__(self, n, gamma, s, q):
         self.n = int(n) # q-matrix number
-        self.gamma = int(gamma) # gamma value ("learning rate")
+        self.gamma = float(gamma) # gamma value ("learning rate")
         self.s = s # State
         self.q = q # get q matrix (in the form of a dictionary)
 
@@ -44,9 +44,9 @@ class Q_Model:
 
 
     # updates the q dictionary to qn
-    def _update_q():
+    # def _update_q():
 
-        # through iterations
-        # while self.n > 0:
+        # update q0 to qn, it not already qn
+        # while(self.n > 0):
 
         #TODO: make that function call a max function for the equation

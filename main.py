@@ -81,5 +81,4 @@ def _acceptValues(q0):
 # Main method
 if __name__ == "__main__":
     q0 = _init_q0()
-    #print(q0)
     _acceptValues(q0) # Take input values for q_learning

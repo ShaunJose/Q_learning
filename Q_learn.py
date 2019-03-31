@@ -34,8 +34,6 @@ class Q_Model:
         return: The value of qn
         """
 
-        print(self.q)
-
         # update q matrix to qn
         self._update_q()
 
@@ -49,8 +47,8 @@ class Q_Model:
             state = "dead"
 
         # print qn(s, exercise) & qn(s, relax)
-        print("qn(" + state + ", exercise): " + str(self.q[self.s + "," + "E"]))
-        print("qn(" + state + ", relax): " + str(self.q[self.s + "," + "R"]))
+        print("q" + str(self.n) + "(" + state + ", exercise): " + str(self.q[self.s + "," + "E"]))
+        print("q" + str(self.n) + "(" + state + ", relax): " + str(self.q[self.s + "," + "R"]))
 
 
     # Updates the q dictionary to qn
@@ -93,7 +91,7 @@ class Q_Model:
         # set max to negative infinity
         max = float('-inf')
 
-        #find max q_value for the state given
+        # find max q_value for the state given
         for i in range(NUM_ACTIONS):
             curr_action = ACTIONS[i] # get action
             key = state + "," + curr_action # compute key for Q-dictionary

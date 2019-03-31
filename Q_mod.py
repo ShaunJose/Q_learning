@@ -1,7 +1,7 @@
 # author: Shaun Jose
 
 # Description:
-# Contrains class Q_Model
+# Contains class Q_Model
 
 #Imports
 from constants import PROB_EX_DEAD
@@ -34,6 +34,9 @@ class Q_Model:
         return: The value of qn
         """
 
+        # keep copy of n
+        n_copy = self.n
+
         # update q matrix to qn
         self._update_q()
 
@@ -47,8 +50,8 @@ class Q_Model:
             state = "dead"
 
         # print qn(s, exercise) & qn(s, relax)
-        print("q" + str(self.n) + "(" + state + ", exercise): " + str(self.q[self.s + "," + "E"]))
-        print("q" + str(self.n) + "(" + state + ", relax): " + str(self.q[self.s + "," + "R"]))
+        print("q" + str(n_copy) + "(" + state + ", exercise): " + str(self.q[self.s + "," + "E"]))
+        print("q" + str(n_copy) + "(" + state + ", relax): " + str(self.q[self.s + "," + "R"]))
 
 
     # Updates the q dictionary to qn

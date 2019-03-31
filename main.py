@@ -14,7 +14,7 @@ from constants import STATES
 from constants import ACTIONS
 from constants import R_DICT
 from constants import P_DICT
-from Q_learn import Q_Model
+from Q_mod import Q_Model
 
 # q0 matrix
 q0 = None

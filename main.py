@@ -66,13 +66,13 @@ def _acceptValues(q0):
         # else:
         # accept valid values
         n = -1
-        while n < 0:
+        while n < 0: # input n accepter
             n = int(input("Input valid n: "))
         gamma = -1
-        while gamma < 0 or gamma > 1:
+        while gamma < 0 or gamma > 1: # input gamma accepter
             gamma = float(input("Input valid \u03B3: "))
         s = "Q"
-        while s != 'F' and s != 'U' and s != 'D':
+        while s != 'F' and s != 'U' and s != 'D': # input s accepter
             s = input("Input valid s \nfit -> F\nunfit -> U\ndead -> D\n ")
         model = Q_Model(n, gamma, s, q0)
         model.compute_qn()
